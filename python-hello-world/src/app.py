@@ -6,7 +6,7 @@
 # echo $VIRTUAL_ENV //show current path virtual venv
 # python -m site //list hierarchy where python will be search for interpreter
 # pip list //list dependences
-# $ pip install -r requirements.txt //install dependences inside txt
+# pip install -r requirements.txt //install dependences inside txt
 
 print("Hello world!!!!!!!")
 
