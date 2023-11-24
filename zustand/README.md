@@ -26,6 +26,12 @@ Step 3:
 npm run server
 ```
 
+Testing:
+
+```cl
+npm run test
+```
+
 ## 📄 License
 
 This project is kept by Wendell Bitencourt.
