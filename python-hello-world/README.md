@@ -1,6 +1,8 @@
 # Python - Hello world 🎡
 
-Project used to testing code in Python.
+Project used to test code in Python.
+
+Which project is inside ./src with project name on the file, example: my-project-name.py
 
 ## Running project
 
