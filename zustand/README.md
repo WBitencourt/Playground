@@ -1,4 +1,4 @@
-# Zustand 🚀
+# Zustand 🐻
 
 Project used to learn more about Zustand.
 
@@ -28,7 +28,7 @@ npm run server
 
 ## 📄 License
 
-This project is kept by Wendell Bitencourt. 
+This project is kept by Wendell Bitencourt.
 
 That was copied from Rocketseat "Redux + Zustand" course and modified by me to consult in the future to remember some concepts.
 
