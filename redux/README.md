@@ -2,6 +2,12 @@
 
 Project used to learn more about Redux.
 
+The project contains a video player, where the components need to talk to each other to know which module or lesson the player is currently selected and playing.
+
+## Preview
+
+![image](https://github.com/WBitencourt/Playground/assets/51727640/0f530373-2b63-43c5-bc81-7b8e9a7a7db4)
+
 ## Running project
 
 To the step below work is necessary that all developer environment be correctly configured.
