@@ -2,6 +2,8 @@
 
 Project used to learn more about Zustand.
 
+The project contains a video player, where the components need to talk to each other to know which module or lesson the player is currently selected and playing.
+
 ## Running project
 
 To the step below work is necessary that all developer environment be correctly configured.
