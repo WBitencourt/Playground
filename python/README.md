@@ -1,4 +1,4 @@
-# Python - Hello world 🎡
+# Python 🎡
 
 Project used to test code in Python.
 
