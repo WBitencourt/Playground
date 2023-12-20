@@ -1,8 +1,8 @@
 import uuid
 import openpyxl
 import os
-import api
-import log
+import services.api as api
+import services.log as log
 
 
 def generate_log_exception(error: Exception):
