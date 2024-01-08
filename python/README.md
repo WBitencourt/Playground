@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# Python - Hello world 🎡
-=======
 # Python 🎡
->>>>>>> 45a15f22b13ca22ff9bb72a6a7c29e46355c969c
 
 Project used to test code in Python.
 
