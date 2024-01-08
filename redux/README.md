@@ -1,9 +1,5 @@
 # Redux ⚛️
 
-Project used to learn more about Redux.
-
-<<<<<<< HEAD
-=======
 The project contains a video player, where the components need to talk to each other to know which module or lesson the player is currently selected and playing.
 
 ## Preview
