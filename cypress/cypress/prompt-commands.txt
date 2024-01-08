@@ -1,0 +1,8 @@
+
+//Open Cypress interface test
+npx cypress open
+
+//Run all files spec inside e2e any level.
+npx cypress run --spec "cypress/e2e/authentication/**/*.cy.ts" 
+npx cypress run --spec "cypress/e2e/app/**/*.cy.ts"
+
