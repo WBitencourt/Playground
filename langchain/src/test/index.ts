@@ -6,6 +6,7 @@ import pdf from 'pdf-parse';
 
 const load = async () => {
   const model = new OpenAI({
+    modelName: "gpt-3.5-turbo-1106",
     openAIApiKey: process.env.OPENAI_API_KEY,
   });
 
@@ -56,7 +57,9 @@ const main = async () => {
   // const text = await convertPdfToText(pdf);
   // writeTextIntoTxtFile(text);
 
-  pdfParseToTxt();
+  //pdfParseToTxt();
+
+  //load();
 } 
 
 main();
