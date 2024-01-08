@@ -7,3 +7,6 @@
 # python -m site //list hierarchy where python will be search for interpreter
 # pip list //list dependences
 # pip install -r requirements.txt //install dependences inside txt
+
+# Prompt to run the script in python
+# python ./src/functions/hello-world.py

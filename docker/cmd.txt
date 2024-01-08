@@ -1,0 +1,65 @@
+Claro! Aqui estão alguns comandos atualizados para Docker, com foco em contêineres (`docker container`), imagens (`docker image`), e volumes (`docker volume`):
+
+### Docker Container:
+
+1. **`docker container ls`**
+   - *Descrição:* Lista os contêineres em execução.
+   - *Exemplo:* `docker container ls`
+
+2. **`docker container ls -a`**
+   - *Descrição:* Lista todos os contêineres, incluindo os que não estão em execução.
+   - *Exemplo:* `docker container ls -a`
+
+3. **`docker container run <options> <image>`**
+   - *Descrição:* Cria e inicia um contêiner a partir de uma imagem.
+   - *Exemplo:* `docker container run -d -p 8080:80 nginx`
+
+4. **`docker container exec -it <container> <command>`**
+   - *Descrição:* Executa um comando dentro de um contêiner em execução.
+   - *Exemplo:* `docker container exec -it my_container bash`
+
+5. **`docker container stop <container>`**
+   - *Descrição:* Para a execução de um contêiner em execução.
+   - *Exemplo:* `docker container stop my_container`
+
+6. **`docker container rm <container>`**
+   - *Descrição:* Remove um ou mais contêineres.
+   - *Exemplo:* `docker container rm my_container`
+
+### Docker Image:
+
+7. **`docker image ls`**
+   - *Descrição:* Lista as imagens disponíveis no sistema.
+   - *Exemplo:* `docker image ls`
+
+8. **`docker image pull <image>`**
+   - *Descrição:* Baixa uma imagem do Docker Hub ou de um repositório específico.
+   - *Exemplo:* `docker image pull ubuntu`
+
+9. **`docker image build -t <image_name>:<tag> <path>`**
+   - *Descrição:* Constrói uma imagem a partir de um Dockerfile no diretório especificado.
+   - *Exemplo:* `docker image build -t myapp:1.0 .`
+
+10. **`docker image rm <image>`**
+    - *Descrição:* Remove uma ou mais imagens.
+    - *Exemplo:* `docker image rm my_image`
+
+### Docker Volume:
+
+11. **`docker volume ls`**
+    - *Descrição:* Lista os volumes Docker disponíveis.
+    - *Exemplo:* `docker volume ls`
+
+12. **`docker volume create <volume_name>`**
+    - *Descrição:* Cria um novo volume Docker.
+    - *Exemplo:* `docker volume create my_volume`
+
+13. **`docker volume inspect <volume>`**
+    - *Descrição:* Exibe detalhes sobre um volume.
+    - *Exemplo:* `docker volume inspect my_volume`
+
+14. **`docker volume rm <volume>`**
+    - *Descrição:* Remove um ou mais volumes Docker.
+    - *Exemplo:* `docker volume rm my_volume`
+
+Estes são comandos comuns, mas lembre-se sempre de consultar a documentação oficial do Docker para obter informações detalhadas e opções adicionais: https://docs.docker.com/
