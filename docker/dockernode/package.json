@@ -1,17 +1,9 @@
 {
   "name": "dockernode",
-<<<<<<< HEAD
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-=======
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
->>>>>>> 45a15f22b13ca22ff9bb72a6a7c29e46355c969c
     "start": "nodemon index.js"
   },
   "keywords": [],
