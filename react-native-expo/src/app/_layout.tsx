@@ -23,7 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <SafeAreaView className="flex-1 bg-red-500">
+    <SafeAreaView className="flex-1 bg-black">
       <Slot />
     </SafeAreaView>
   )
