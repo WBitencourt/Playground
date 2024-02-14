@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <View className="flex-1 items-center justify-start gap-6">
       <Text className="items-center text-white text-2xl font-heading">
-        Test with Zustand a
+        Test with Zustand
       </Text>
 
       <View className="flex-1 items-center justify-center gap-6">
