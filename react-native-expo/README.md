@@ -1,4 +1,4 @@
-# Express server 🎡
+# React Native with Expo ⚛️
 
 Project used to test react native with expo
 
@@ -59,7 +59,7 @@ Something like this is show at terminal, so press "a" to open android studio
 ...
 ```
 
-Now, you can see te app running.
+Now, you can see the app running and interactable.
 
 ## 📄 License
 
