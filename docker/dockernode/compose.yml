@@ -1,20 +1,13 @@
-version: "3.9"
-
-volumes:
-  postgres:
-    driver: local
-
 services:
   app: 
     build: .
     ports: 
-      - '3333:3000'
+      - '3000:3000'
     networks:
       - backend
       - database
     depends_on:
       - postgres
-
   postgres:
     image: postgres
     volumes: 
@@ -22,11 +15,18 @@ services:
       - ./docker-scripts:/scripts
       - ./docker-scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment: 
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
+      POSTGRES_DB: playground_docker
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: usersecret
     ports: 
       - '5432:5432'
     networks:
       - database
 
+volumes:
+  postgres:
+    driver: local
+
+networks:
+  backend:
+  database:

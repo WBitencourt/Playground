@@ -2,17 +2,17 @@
 -- list all databases
 \l;
 
--- connect to mydb_dockernode
-\c mydb_dockernode; 
+-- connect database
+\c playground_docker; 
 
--- describe mytable_dockernode
-\d mytable_dockernode; 
+-- describe table
+\d example; 
 
---DELETE FROM mytable_dockernode;
+--DELETE FROM example;
 
-INSERT INTO mytable_dockernode (name) VALUES ('test');
+INSERT INTO example (name) VALUES ('test');
 
-SELECT * FROM mytable_dockernode;
+SELECT * FROM example;
 
 -- Run this script in terminal with the following command:
--- docker-compose exec postgres psql -U postgres -f /scripts/check.sql
+-- docker compose exec postgres psql -U username -d playground_docker -f /scripts/check.sql
