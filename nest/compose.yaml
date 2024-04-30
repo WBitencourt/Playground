@@ -1,0 +1,38 @@
+services:
+  app: 
+    build: .
+    ports: 
+      - '3000:3000'
+    command: npm run dev
+    develop:
+      watch:
+        - action: sync
+          path: . #path inside /usr/src/app
+          target: /usr/src/app
+    networks:
+      - backend
+      - database
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres
+    volumes: 
+      - postgres:/var/lib/postgresql/data
+      - ./docker-scripts:/scripts
+      - ./docker-scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment: 
+      POSTGRES_DB: nestjs_docker
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: usersecret
+    ports: 
+      - '5432:5432'
+    networks:
+      - database
+
+volumes:
+  postgres:
+    driver: local
+
+networks:
+  backend:
+  database:
