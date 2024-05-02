@@ -25,6 +25,50 @@ export interface PlayerState {
   load: () => Promise<void>;
 }
 
+type Set = (partial: PlayerState | Partial<PlayerState> | ((state: PlayerState) => PlayerState | Partial<PlayerState>), replace?: boolean | undefined) => void
+type Get = () => PlayerState
+
+const load = async (set: Set) => {
+  set({ isLoading: true })
+
+  const response = await api.get('/courses/1')
+
+  set({
+    course: response.data,
+    isLoading: false,
+  })
+}
+
+const play = (set: Set, moduleAndLessonIndex: [number, number]) => {
+  const [moduleIndex, lessonIndex] = moduleAndLessonIndex
+
+  set({
+    currentModuleIndex: moduleIndex,
+    currentLessonIndex: lessonIndex,
+  })
+}
+
+const next = (get: Get, set: Set) => {
+  const { currentLessonIndex, currentModuleIndex, course } = get()
+
+  const nextLessonIndex = currentLessonIndex + 1;
+  const nextLesson = course?.modules[currentModuleIndex].lessons[nextLessonIndex];
+
+  if (nextLesson) {
+    set({ currentLessonIndex: nextLessonIndex })
+  } else {
+    const nextModuleIndex = currentModuleIndex + 1;
+    const nextModule = course?.modules[nextModuleIndex];
+
+    if (nextModule) {
+      set({
+        currentModuleIndex: nextModuleIndex,
+        currentLessonIndex: 0,
+      })
+    }
+  }
+}
+
 export const useStore = create<PlayerState>((set, get) => {
   return {
     course: null,
@@ -32,46 +76,11 @@ export const useStore = create<PlayerState>((set, get) => {
     currentLessonIndex: 0,
     isLoading: true,
 
-    load: async () => {
-      set({ isLoading: true })
+    load: () => load(set),
 
-      const response = await api.get('/courses/1')
+    play: (moduleAndLessonIndex) => play(set, moduleAndLessonIndex),
 
-      set({
-        course: response.data,
-        isLoading: false,
-      })
-    },
-
-    play: (moduleAndLessonIndex: [number, number]) => {
-      const [moduleIndex, lessonIndex] = moduleAndLessonIndex
-
-      set({
-        currentModuleIndex: moduleIndex,
-        currentLessonIndex: lessonIndex,
-      })
-    },
-
-    next: () => {
-      const { currentLessonIndex, currentModuleIndex, course } = get()
-
-      const nextLessonIndex = currentLessonIndex + 1;
-      const nextLesson = course?.modules[currentModuleIndex].lessons[nextLessonIndex];
-
-      if (nextLesson) {
-        set({ currentLessonIndex: nextLessonIndex })
-      } else {
-        const nextModuleIndex = currentModuleIndex + 1;
-        const nextModule = course?.modules[nextModuleIndex];
-
-        if (nextModule) {
-          set({
-            currentModuleIndex: nextModuleIndex,
-            currentLessonIndex: 0,
-          })
-        }
-      }
-    }
+    next: () => next(get, set),
   }
 })
 
