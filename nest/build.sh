@@ -1,6 +1,11 @@
 
-new_version=$(npm version patch)
+docker compose down
 
-docker image build -t docker-nest-backend-image:$new_version .
+docker container rm nest
 
-docker container run -d -p 3333:3000 --name docker-nest-backend-container-$new_version docker-nest-backend-image:$new_version
+docker image rm nest-app
+
+docker compose up --watch
+
+npx prisma db pull
+npx prisma generate
