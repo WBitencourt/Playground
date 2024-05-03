@@ -28,7 +28,7 @@ export interface PlayerState {
 type Set = (partial: PlayerState | Partial<PlayerState> | ((state: PlayerState) => PlayerState | Partial<PlayerState>), replace?: boolean | undefined) => void
 type Get = () => PlayerState
 
-const load = async (set: Set) => {
+const load = (set: Set) => async () => {
   set({ isLoading: true })
 
   const response = await api.get('/courses/1')
@@ -39,7 +39,7 @@ const load = async (set: Set) => {
   })
 }
 
-const play = (set: Set, moduleAndLessonIndex: [number, number]) => {
+const play = (set: Set) => (moduleAndLessonIndex: [number, number]) => {
   const [moduleIndex, lessonIndex] = moduleAndLessonIndex
 
   set({
@@ -48,7 +48,7 @@ const play = (set: Set, moduleAndLessonIndex: [number, number]) => {
   })
 }
 
-const next = (get: Get, set: Set) => {
+const next = (get: Get, set: Set) => () => {
   const { currentLessonIndex, currentModuleIndex, course } = get()
 
   const nextLessonIndex = currentLessonIndex + 1;
@@ -76,11 +76,11 @@ export const useStore = create<PlayerState>((set, get) => {
     currentLessonIndex: 0,
     isLoading: true,
 
-    load: () => load(set),
+    load: load(set),
 
-    play: (moduleAndLessonIndex) => play(set, moduleAndLessonIndex),
+    play: play(set),
 
-    next: () => next(get, set),
+    next: next(get, set),
   }
 })
 
