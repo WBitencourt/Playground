@@ -29,14 +29,20 @@ type Set = (partial: PlayerState | Partial<PlayerState> | ((state: PlayerState) 
 type Get = () => PlayerState
 
 const load = (set: Set) => async () => {
-  set({ isLoading: true })
+  try {
+    set({ isLoading: true })
 
-  const response = await api.get('/courses/1')
-
-  set({
-    course: response.data,
-    isLoading: false,
-  })
+    const response = await api.get('/courses/1')
+    //throw new Error('Error loading store')
+    set({
+      course: response.data,
+      isLoading: false,
+    })
+  } catch(error: any) {
+    throw error
+  } finally {
+    set({ isLoading: false })
+  }
 }
 
 const play = (set: Set) => (moduleAndLessonIndex: [number, number]) => {

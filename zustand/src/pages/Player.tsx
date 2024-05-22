@@ -17,7 +17,7 @@ export function Player() {
   const { currentLesson } = useCurrentLesson()
 
   useEffect(() => {
-    load()
+    load().catch(error => console.log('error: ', error?.message))
   }, []);
 
   useEffect(() => {
