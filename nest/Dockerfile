@@ -3,9 +3,12 @@ FROM node:16
 WORKDIR /usr/src/app
 
 COPY package.json package.json
+
 RUN npm install
+
 COPY . /usr/src/app
 
-
 EXPOSE 3000
-CMD [ "npm", "run", "start" ]
+
+# only executed when container is started and tag command compose.yaml is not provided
+# CMD [ "npm", "run", "start:dev" ] 
