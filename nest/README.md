@@ -32,12 +32,23 @@
 $ npm install
 ```
 
-## Running the app
+## Environment
 
 ```bash
-# run docker compose
+#Change where are have []
+DATABASE_URL="postgresql://[username]:[password]@postgres:5432/[dbname]?schema=public"
+```
+
+## Running the app
+
+### With docker compose
+
+```bash
+# Check if all files .sh is on LF text format
 $ sh ./build.sh
 ```
+
+### Without docker compose
 
 ```bash
 # development

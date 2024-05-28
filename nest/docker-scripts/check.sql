@@ -1,4 +1,3 @@
-
 -- list all databases
 \l;
 
@@ -10,9 +9,10 @@
 
 --DELETE FROM example;
 
-INSERT INTO example (name) VALUES ('test');
+INSERT INTO example (name) VALUES ('check.sql test');
 
 SELECT * FROM example;
 
 -- Run this script in terminal with the following command:
--- docker compose exec postgres psql -U username -d nestjs_docker -f /scripts/check.sql
+-- docker compose exec postgres sh
+-- psql -U username -d nestjs_docker -f /scripts/check.sql
