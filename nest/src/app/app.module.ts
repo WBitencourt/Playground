@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { OrmModule } from './ORM/orm.module';
+import { AppController } from '@app/app.controller';
+import { AppService } from '@app/app.service';
+import { OrmModule } from '@ORM/orm.module';
 
 @Module({
   imports: [OrmModule],
