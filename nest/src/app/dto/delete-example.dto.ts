@@ -3,7 +3,7 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class DeleteExampleDto {
   @ApiProperty({
-    description: 'Id of the example to delete',
+    description: 'ID of the example to delete',
     example: '10',
     type: String,
     required: true,
