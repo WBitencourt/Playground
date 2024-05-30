@@ -22,7 +22,7 @@ export class AppService {
     });
 
     return {
-      message: 'Server is running and alive and connected with database!',
+      message: 'Server is running, alive and connected with database!',
       data,
     };
   }
