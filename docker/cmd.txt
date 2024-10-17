@@ -62,47 +62,47 @@
 
 ### Docker Compose:
 
-15. **`docker-compose up`**
+15. **`docker compose up -d`**
     - *Descrição:* Cria e inicia todos os serviços definidos no arquivo `docker-compose.yml`.
     - *Exemplo:* `docker-compose up -d`
 
-16. **`docker-compose down`**
+16. **`docker compose down -v`**
     - *Descrição:* Para e remove todos os containers, redes e volumes definidos no arquivo `docker-compose.yml`.
     - *Exemplo:* `docker-compose down`
 
-17. **`docker-compose build`**
+17. **`docker compose build`**
     - *Descrição:* Constrói ou reconstrói serviços especificados no arquivo `docker-compose.yml`.
     - *Exemplo:* `docker-compose build`
 
-18. **`docker-compose ps`**
+18. **`docker compose ps`**
     - *Descrição:* Lista todos os containers criados pelo `docker-compose up`, mostrando seu estado.
     - *Exemplo:* `docker-compose ps`
 
-19. **`docker-compose restart`**
+19. **`docker compose restart`**
     - *Descrição:* Reinicia todos os containers definidos no arquivo `docker-compose.yml`.
     - *Exemplo:* `docker-compose restart`
 
-20. **`docker-compose stop`**
+20. **`docker compose stop`**
     - *Descrição:* Para todos os containers sem removê-los.
     - *Exemplo:* `docker-compose stop`
 
-21. **`docker-compose start`**
+21. **`docker compose start`**
     - *Descrição:* Inicia todos os containers previamente criados e parados.
     - *Exemplo:* `docker-compose start`
 
-22. **`docker-compose logs`**
+22. **`docker compose logs`**
     - *Descrição:* Exibe os logs dos serviços. Com a opção `-f` pode-se acompanhar o log em tempo real.
     - *Exemplo:* `docker-compose logs -f`
 
-23. **`docker-compose pull`**
+23. **`docker compose pull`**
     - *Descrição:* Baixa as imagens configuradas no `docker-compose.yml` sem iniciar os containers.
     - *Exemplo:* `docker-compose pull`
 
-24. **`docker-compose exec`**
+24. **`docker compose exec`**
     - *Descrição:* Executa um comando em um serviço em execução.
     - *Exemplo:* `docker-compose exec web bash`
 
-25. **`docker-compose run`**
+25. **`docker compose run`**
     - *Descrição:* Executa um serviço único definido no `docker-compose.yml`, útil para tarefas pontuais.
     - *Exemplo:* `docker-compose run web python manage.py migrate`
 

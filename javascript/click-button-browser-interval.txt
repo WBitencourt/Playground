@@ -1,0 +1,14 @@
+const intervalId = setInterval(() => {
+    // Encontra o botão que contém um span com o texto "Retrieve next page"
+    const button = Array.from(document.querySelectorAll('button')).find(btn => {
+        return btn.querySelector('span')?.textContent.includes('Retrieve next page');
+    });
+
+    // Verifica se o botão foi encontrado
+    if (button) {
+        console.log('Clicando no botão');
+        button.click();
+    } else {
+        console.log('Botão não encontrado. Continuando a busca...');
+    }
+}, 2000); // 2000 milissegundos = 2 segundos
